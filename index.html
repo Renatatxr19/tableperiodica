@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela Periódica </title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    h1 {
+    color: #f3a1ef;
+    text-align: center
+    
+}
+
+  /* ===== Cores por grupo ===== */
+  .metal-alcalino { background-color: #99ebff; color: white; }
+  .metal-alcalino-terroso { background-color: #f1b198; color: white; }
+  .metal-transicao { background-color: #bf7dda; color: black; }
+  .metal-pos-transicao { background-color: #c6f3a9; color: black; }
+  .semimetal { background-color: #f5e8a0; color: black; }
+  .ametais-reativos { background-color: #9e9dee; color: black; }
+  .halogenio { background-color: #ffcc66; color: black; }
+  .gas-nobre { background-color: #e792e0; color: black; }
+  .lantanideo { background-color: #9585c2; color: black; }
+  .actinideo { background-color: #c2594b; color: black; }
+  .propriedades-desconhecidas { background-color: #7a7977; color: black; }
+  .nao-metal { background-color: #a0e6a0; color: black; } /* adicionado para H, C, N, O, etc. */
+
+  /* ===== Estilo das células ===== */
+  .elemento {
+    border: 2px solid #969596;
+    border-radius: 5px;
+    padding: 1px;
+    margin: 1px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    font-size: 0.7rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .simbolo {
+    font-size: 1.9rem;
+    font-weight: bold;
+    display: block;
+  }
+
+  /* ===== Botões com cores iguais às células ===== */
+  .btn-metal-alcalino { background-color: #99ebff; color: rgb(253, 250, 250); }
+  .btn-metal-alcalino-terroso { background-color: #f1b198; color: white; }
+  .btn-metal-transicao { background-color: #bf7dda; color: black; }
+  .btn-metal-pos-transicao { background-color: #c6f3a9; color: black; }
+  .btn-semimetal { background-color: #f5e8a0; color: black; }
+  .btn-ametais-reativos { background-color: #9e9dee; color: black; }
+  .btn-halogenio { background-color: #ffcc66; color: black; }
+  .btn-gas-nobre { background-color: #e792e0; color: black; }
+  .btn-lantanideo { background-color: #a088e4; color: black; }
+  .btn-actinideo { background-color: #c2594b; color: black; }
+  .btn-propriedades-desconhecidas { background-color: #a7a5a4; color: black; }
+
+.botoes-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width:1100px; 
+    
+    display: grid;
+    /* FORÇA 7 COLUNAS IGUAIS (o que resulta em 2 linhas) */
+    grid-template-columns: repeat(5, 2fr);
+    gap: 5px; 
+}
+
+.botoes-grid li button {
+    width: 100%; 
+    white-space: normal; 
+    padding: 6px 4px;
+    font-size: 0.8rem;
+}
+
+.elemento {
+    position: relative; 
+
+}
+
+.numero-atomico {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: #333;
+}
+
+</style>
+</head>
+
+<body class="container my-4">
+
+<h1 class="text-center mb-4">Tabela Periódica dos Elementos </h1>
+
+<!-- ===== Tabela Periódica ===== -->
+<div class="row">
+  <div class="elemento nao-metal"><span class="numero-atomico">1</span><span class="simbolo">H</span>Hidrogênio</div>
+  <div class="col"></div><div class="col"></div><div class="col"></div>
+  <div class="col"></div><div class="col"></div><div class="col"></div>
+  <div class="col"></div><div class="col"></div>
+  <div class="col"></div><div class="col"></div><div class="col"></div>
+  <div class="elemento gas-nobre"><span class="numero-atomico">2</span><span class="simbolo">He</span>Hélio</div>
+</div>
+
+<div class="row">
+  <div class="elemento metal-alcalino"><span class="numero-atomico">3</span><span class="simbolo">Li</span>Lítio</div>
+  <div class="elemento metal-alcalino-terroso"><span class="numero-atomico">4</span><span class="simbolo">Be</span>Berílio</div>
+  <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+  <div class="col"></div><div class="col"></div>
+  <div class="elemento semimetal"><span class="numero-atomico">5</span><span class="simbolo">B</span>Boro</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">6</span><span class="simbolo">C</span>Carbono</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">7</span><span class="simbolo">N</span>Nitrogênio</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">8</span><span class="simbolo">O</span>Oxigênio</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">9</span><span class="simbolo">F</span>Flúor</div>
+  <div class="elemento gas-nobre"><span class="numero-atomico">10</span><span class="simbolo">Ne</span>Neônio</div>
+</div>
+
+<div class="row">
+  <div class="elemento metal-alcalino"><span class="numero-atomico">11</span><span class="simbolo">Na</span>Sódio</div>
+  <div class="elemento metal-alcalino-terroso"><span class="numero-atomico">12</span><span class="simbolo">Mg</span>Magnésio</div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="elemento metal-pos-transicao"><span class="numero-atomico">13</span><span class="simbolo">Al</span>Alumínio</div>
+  <div class="elemento semimetal"><span class="numero-atomico">14</span><span class="simbolo">Si</span>Silício</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">15</span><span class="simbolo">P</span>Fósforo</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">16</span><span class="simbolo">S</span>Enxofre</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">17</span><span class="simbolo">Cl</span>Cloro</div>
+  <div class="elemento gas-nobre"><span class="numero-atomico">18</span><span class="simbolo">Ar</span>Argônio</div>
+</div>
+
+<div class="row">
+  <div class="elemento metal-alcalino"><span class="numero-atomico">19</span><span class="simbolo">K</span>Potássio</div>
+  <div class="elemento metal-alcalino-terroso"><span class="numero-atomico">20</span><span class="simbolo">Ca</span>Cálcio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">21</span><span class="simbolo">Sc</span>Escândio</div>
+  <div class="col"></div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">22</span><span class="simbolo">Ti</span>Titânio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">23</span><span class="simbolo">V</span>Vanádio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">24</span><span class="simbolo">Cr</span>Cromo</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">25</span><span class="simbolo">Mn</span>Manganês</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">26</span><span class="simbolo">Fe</span>Ferro</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">27</span><span class="simbolo">Co</span>Cobalto</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">28</span><span class="simbolo">Ni</span>Níquel</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">29</span><span class="simbolo">Cu</span>Cobre</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">30</span><span class="simbolo">Zn</span>Zinco</div>
+  <div class="elemento metal-pos-transicao"><span class="numero-atomico">31</span><span class="simbolo">Ga</span>Gálio</div>
+  <div class="elemento semimetal"><span class="numero-atomico">32</span><span class="simbolo">Ge</span>Germânio</div>
+  <div class="elemento semimetal"><span class="numero-atomico">33</span><span class="simbolo">As</span>Arsênio</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">34</span><span class="simbolo">Se</span>Selênio</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">35</span><span class="simbolo">Br</span>Bromo</div>
+  <div class="elemento gas-nobre"><span class="numero-atomico">36</span><span class="simbolo">Kr</span>Criptônio</div>
+</div>
+
+<div class="row">
+  <div class="elemento metal-alcalino"><span class="numero-atomico">37</span><span class="simbolo">Rb</span>Rubídio</div>
+  <div class="elemento metal-alcalino-terroso"><span class="numero-atomico">38</span><span class="simbolo">Sr</span>Estrôncio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">39</span><span class="simbolo">Y</span>Ítrio</div>
+  <div class="col"></div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">40</span><span class="simbolo">Zr</span>Zircônio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">41</span><span class="simbolo">Nb</span>Nióbio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">42</span><span class="simbolo">Mo</span>Molibdênio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">43</span><span class="simbolo">Tc</span>Tecnécio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">44</span><span class="simbolo">Ru</span>Rutênio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">45</span><span class="simbolo">Rh</span>Ródio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">46</span><span class="simbolo">Pd</span>Paládio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">47</span><span class="simbolo">Ag</span>Prata</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">48</span><span class="simbolo">Cd</span>Cádmio</div>
+  <div class="elemento metal-pos-transicao"><span class="numero-atomico">49</span><span class="simbolo">In</span>Índio</div>
+    <div class="elemento metal-pos-transicao"><span class="numero-atomico">50</span><span class="simbolo">Sn</span>Estanho</div>
+  <div class="elemento semimetal"><span class="numero-atomico">51</span><span class="simbolo">Sb</span>Antimônio</div>
+  <div class="elemento semimetal"><span class="numero-atomico">52</span><span class="simbolo">Te</span>Telúrio</div>
+  <div class="elemento ametais-reativos"><span class="numero-atomico">53</span><span class="simbolo">I</span>Iodo</div>
+  <div class="elemento gas-nobre"><span class="numero-atomico">54</span><span class="simbolo">Xe</span>Xenônio</div>
+</div>
+
+<div class="row">
+  <div class="elemento metal-alcalino"><span class="numero-atomico">55</span><span class="simbolo">Cs</span>Césio</div>
+  <div class="elemento metal-alcalino-terroso"><span class="numero-atomico">56</span><span class="simbolo">Ba</span>Bário</div>
+  <div class="elemento lantanideo "><span class="numero-atomico">57</span><span class="simbolo">La</span>Lantânio</div>
+  <div class="col"></div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">72</span><span class="simbolo">Hf</span>Háfnio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">73</span><span class="simbolo">Ta</span>Tântalo</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">74</span><span class="simbolo">W</span>Tungstênio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">75</span><span class="simbolo">Re</span>Rênio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">76</span><span class="simbolo">Os</span>Ósmio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">77</span><span class="simbolo">Ir</span>Irídio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">78</span><span class="simbolo">Pt</span>Platina</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">79</span><span class="simbolo">Au</span>Ouro</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">80</span><span class="simbolo">Hg</span>Mercúrio</div>
+  <div class="elemento metal-pos-transicao"><span class="numero-atomico">81</span><span class="simbolo">Ti</span>Tálio</div>
+    <div class="elemento metal-pos-transicao"><span class="numero-atomico">82</span><span class="simbolo">Pb</span>Chumbo</div>
+  <div class="elemento metal-pos-transicao"><span class="numero-atomico">83</span><span class="simbolo">Bi</span>Bismuto</div>
+  <div class="elemento semimetal"><span class="numero-atomico">84</span><span class="simbolo">Po</span>Polônio</div>
+  <div class="elemento halogenio"><span class="numero-atomico">85</span><span class="simbolo">At</span>Ástato</div>
+  <div class="elemento gas-nobre"><span class="numero-atomico">86</span><span class="simbolo">Rn</span>Rádon</div>
+</div>
+
+<div class="row">
+  <div class="elemento metal-alcalino"><span class="numero-atomico">87</span><span class="simbolo">Fr</span>Frâncio</div>
+  <div class="elemento metal-alcalino-terroso"><span class="numero-atomico">88</span><span class="simbolo">Ra</span>Rádio</div>
+  <div class="elemento actinideo "><span class="numero-atomico">89</span><span class="simbolo">Ac</span>Actínio</div>
+  <div class="col"></div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">104</span><span class="simbolo">Rf</span>Rutherfórdio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">105</span><span class="simbolo">Db</span>Dúbnio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">106</span><span class="simbolo">Sg</span>Seabórgio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">107</span><span class="simbolo">Bh</span>Bóhrio</div>
+  <div class="elemento metal-transicao"><span class="numero-atomico">108</span><span class="simbolo">Hs</span>Hássio</div>
+  <div class="elemento propriedades-desconhecidas "><span class="numero-atomico">109</span><span class="simbolo">Mt</span>Meitnério</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">110</span><span class="simbolo">Ds</span>Darmstádtio</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">111</span><span class="simbolo">Rg</span>Roentgênio</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">112</span><span class="simbolo">Cn</span>Copernício</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">113</span><span class="simbolo">Nh</span>Nihonium</div>
+    <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">114</span><span class="simbolo">Fl</span>Fleróvio</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">115</span><span class="simbolo">Mc</span>Moscóvio</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">116</span><span class="simbolo">Lv</span>Livermório</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">117</span><span class="simbolo">Ts</span>Tenesso</div>
+  <div class="elemento propriedades-desconhecidas"><span class="numero-atomico">118</span><span class="simbolo">Og</span>Oganesson</div>
+</div>
+
+
+<div class="row mt-2">
+  <div class="col-1"></div>
+    <div class="col"></div>
+     <div class="col"></div>
+       <div class="col"></div>
+  <div class="elemento lantanideo"><span class="numero-atomico">57</span><span class="simbolo">La</span>Lantânio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">58</span><span class="simbolo">Ce</span>Cério</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">59</span><span class="simbolo">Pr</span>Praseodímio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">60</span><span class="simbolo">Nd</span>Neodímio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">61</span><span class="simbolo">Pm</span>Promécio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">62</span><span class="simbolo">Sm</span>Samário</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">63</span><span class="simbolo">Eu</span>Europio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">64</span><span class="simbolo">Gd</span>Gadolínio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">65</span><span class="simbolo">Tb</span>Térbio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">66</span><span class="simbolo">Dy</span>Disprósio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">67</span><span class="simbolo">Ho</span>Hólmio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">68</span><span class="simbolo">Er</span>Érbio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">69</span><span class="simbolo">Tm</span>Túlio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">70</span><span class="simbolo">Yb</span>Itérbio</div>
+  <div class="elemento lantanideo"><span class="numero-atomico">71</span><span class="simbolo">Lu</span>Lutécio</div>
+</div>
+
+<div class="row mt-2">
+  <div class="col-1"></div>
+  <div class="col"></div>
+    <div class="col"></div>
+      <div class="col"></div>
+  <div class="elemento actinideo"><span class="numero-atomico">89</span><span class="simbolo">Ac</span>Actínio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">90</span><span class="simbolo">Th</span>Tório</div>
+  <div class="elemento actinideo"><span class="numero-atomico">91</span><span class="simbolo">Pa</span>Protactínio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">92</span><span class="simbolo">U</span>Urânio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">93</span><span class="simbolo">Np</span>Netúnio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">94</span><span class="simbolo">Pu</span>Plutônio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">95</span><span class="simbolo">Am</span>Amerício</div>
+  <div class="elemento actinideo"><span class="numero-atomico">96</span><span class="simbolo">Cm</span>Cúrio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">97</span><span class="simbolo">Bk</span>Bercélio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">98</span><span class="simbolo">Cf</span>Califórnio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">99</span><span class="simbolo">Es</span>Einsteinio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">100</span><span class="simbolo">Fm</span>Férmio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">101</span><span class="simbolo">Md</span>Mendelévio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">102</span><span class="simbolo">No</span>Nobélio</div>
+  <div class="elemento actinideo"><span class="numero-atomico">103</span><span class="simbolo">Lr</span>Lawrêncio</div>
+</div>
+
+<!-- Botões para destaque por grupo -->
+
+<div class="text-center my-4">
+   
+    <ul class="botoes-grid">
+        
+        <li><button class="btn btn-metal-alcalino btn-sm" onclick="destacar('metal-alcalino')">Metais Alcalinos</button></li>
+        <li><button class="btn btn-metal-alcalino-terroso btn-sm" onclick="destacar('metal-alcalino-terroso')">Alcalinoterrosos</button></li>
+        <li><button class="btn btn-metal-transicao btn-sm" onclick="destacar('metal-transicao')">Metais de Transição</button></li>
+        <li><button class="btn btn-metal-pos-transicao btn-sm" onclick="destacar('metal-pos-transicao')">Metais Pós-Transição</button></li>
+        <li><button class="btn btn-semimetal btn-sm" onclick="destacar('semimetal')">Semimetais</button></li>
+        <li><button class="btn btn-ametais-reativos btn-sm" onclick="destacar('ametais-reativos')">Ametais Reativos</button></li>
+        <li><button class="btn btn-gas-nobre btn-sm" onclick="destacar('gas-nobre')">Gases Nobres</button></li>
+        <li><button class="btn btn-lantanideo btn-sm" onclick="destacar('lantanideo')">Lantanídeos</button></li>
+        <li><button class="btn btn-actinideo btn-sm" onclick="destacar('actinideo')">Actinídeos</button></li>
+        <li><button class="btn btn-propriedades-desconhecidas btn-sm" onclick="destacar('propriedades-desconhecidas')"> Propriedades Desconhecidas</button></li>     
+        
+        <li><button class="btn btn-sm btn-light border invisible" disabled>Espaço</button></li>
+    </ul>
+</div>
+
+<!-- ===== JavaScript para destaque ===== -->
+<script>
+  function destacar(grupo) {
+    document.querySelectorAll('.elemento').forEach(el => {
+      el.style.opacity = "0.3";
+    });
+    document.querySelectorAll('.' + grupo).forEach(el => {
+      el.style.opacity = "1";
+    });
+  }
+</script>
+
+</body>
+</html>
