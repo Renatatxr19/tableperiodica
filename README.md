@@ -1,4 +1,4 @@
-# ⚛️ Tabela Periódica Detalhada e Visualmente Fiel
+# ⚛️ Tabela Periódica Detalhada 
 
 Este projeto é uma recriação digital da Tabela Periódica dos Elementos com um design profissional e alta densidade de informação. Desenvolvida em **HTML** e **CSS**, a tabela foca na clareza e na organização dos dados essenciais de cada elemento.
 
