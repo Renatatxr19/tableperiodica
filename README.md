@@ -19,5 +19,5 @@ O projeto utiliza um esquema de cores e layout fiel a modelos de tabelas periód
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **HTML5:** Estrutura semântica e organização dos elementos.
-* **CSS3:** Estilização avançada, uso de `position: absolute` e `position: relative` para posicionar dados dentro de cada célula (Z, Configuração Eletrônica) e manipulação do layout.
+* **HTML5** 
+* **CSS3**.
